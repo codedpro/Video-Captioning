@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+av
+numpy
+Pillow
+transformers
+huggingface-hub
