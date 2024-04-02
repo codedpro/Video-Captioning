@@ -13,6 +13,7 @@
     }
   ],
   "env": {
-    "APP_MODULE": "main:app"
+    "APP_MODULE": "main:app",
+    "PYTHON_VERSION": "3.9"
   }
 }
