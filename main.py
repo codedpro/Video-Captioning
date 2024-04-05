@@ -11,7 +11,6 @@ app = FastAPI()
 processor = AutoProcessor.from_pretrained("microsoft/git-base-vatex")
 model = AutoModelForCausalLM.from_pretrained("microsoft/git-base-vatex")
 
-# set seed for reproducability
 np.random.seed(45)
 
 
@@ -57,14 +56,11 @@ def sample_frame_indices(clip_len, frame_sample_rate, seg_len):
 @app.post("/caption_video/")
 async def caption_video(file: UploadFile = File(...)):
     try:
-        # save video file
         with open(file.filename, "wb") as buffer:
             buffer.write(await file.read())
 
-        # load video
         container = av.open(file.filename)
 
-        # sample frames
         num_frames = model.config.num_image_with_embedding
         indices = sample_frame_indices(
             clip_len=num_frames, frame_sample_rate=4, seg_len=container.streams.video[0].frames
