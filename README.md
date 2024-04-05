@@ -7,7 +7,7 @@ This project is a FastAPI-based API for generating captions for videos. It utili
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your_username/video-captioning-api.git
+    git clone https://github.com/codedpro/video-captioning-api.git
     ```
 
 2. Navigate to the project directory:
